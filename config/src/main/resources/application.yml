@@ -1,0 +1,13 @@
+server:
+  port: 8081
+
+spring:
+  # Spring Cloud Config Server Repository
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/josemiguel-chvz/eval3_mingeso
+          search-paths: config-data
+  application:
+    name: config
