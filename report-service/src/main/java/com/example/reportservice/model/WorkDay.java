@@ -1,8 +1,17 @@
 package com.example.reportservice.model;
 
 public class WorkDay {
+    private Integer scheduleId;
     private String date;
     private Double hours;
+
+    public Integer getScheduleId() {
+        return scheduleId;
+    }
+
+    public void setScheduleId(Integer scheduleId) {
+        this.scheduleId = scheduleId;
+    }
 
     public String getDate() {
         return date;
