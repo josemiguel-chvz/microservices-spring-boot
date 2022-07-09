@@ -21,7 +21,7 @@ spring:
           uri: lb://employee-service
           predicates:
             - Path=/employee/**
-        - id: product-prices-service
-          uri: lb://product-prices-service
+        - id: schedule-service
+          uri: lb://schedule-service
           predicates:
-            - Path=/prices/**
+            - Path=/schedule/**
