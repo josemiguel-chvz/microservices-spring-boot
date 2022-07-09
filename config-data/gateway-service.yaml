@@ -25,3 +25,7 @@ spring:
           uri: lb://schedule-service
           predicates:
             - Path=/schedule/**
+        - id: report-service
+          uri: lb://report-service
+          predicates:
+            - Path=/report/**
