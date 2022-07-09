@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: schedule-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
+      fail-fast: true
+  data:
+    jpa.repositories.enabled: true
+  datasource:
+    initialization-mode: always
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5433/schedule
+    username: postgres
+    password: 123456
+

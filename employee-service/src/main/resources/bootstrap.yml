@@ -6,3 +6,10 @@ spring:
       enabled: true
       uri: http://localhost:8081
       fail-fast: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:33060/employee
+    username: springuser
+    password: 123456
