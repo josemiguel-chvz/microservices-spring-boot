@@ -6,8 +6,9 @@ spring:
       enabled: true
       uri: http://localhost:8081
       fail-fast: true
-  data:
-    jpa.repositories.enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
   datasource:
     initialization-mode: always
     driverClassName: org.postgresql.Driver

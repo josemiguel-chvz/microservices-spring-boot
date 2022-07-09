@@ -21,6 +21,10 @@ public class ScheduleService {
         return scheduleRepository.findAll();
     }
 
+    public List<Schedule> getAllByEmployeeId(Integer employeeId) {
+        return scheduleRepository.findByEmployeeId(employeeId);
+    }
+
     public Schedule getScheduleById(int id) {
         return scheduleRepository.findById(id).orElse(null);
     }

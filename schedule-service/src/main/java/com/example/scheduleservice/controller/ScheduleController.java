@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.scheduleservice.entity.Schedule;
@@ -21,10 +22,24 @@ public class ScheduleController {
     @Autowired
     ScheduleService scheduleService;
 
-    @GetMapping()
+    @GetMapping("/all")
     public ResponseEntity<List<Schedule>> getAll() {
         try {
             List<Schedule> schedules = scheduleService.getAll();
+            if (schedules.isEmpty()) {
+                return ResponseEntity.noContent().build();
+            }
+            return ResponseEntity.ok(schedules);
+        } catch (Exception e) {
+            System.out.println("Error: "+e);
+            return null;
+        }
+    }
+
+    @GetMapping()
+    public ResponseEntity<List<Schedule>> getAllByEmployee(@RequestParam(value = "employee_id", required = false) Integer employee_id) {
+        try {
+            List<Schedule> schedules = scheduleService.getAllByEmployeeId(employee_id);
             if (schedules.isEmpty()) {
                 return ResponseEntity.noContent().build();
             }
