@@ -70,6 +70,8 @@ public class ReportService {
             Double hours = getHours(schedule.getIn_hour(), schedule.getOut_hour());
             workDay.setScheduleId(schedule.getId());
             workDay.setDate(schedule.getDate());
+            workDay.setInHour(schedule.getIn_hour());
+            workDay.setOutHour(schedule.getOut_hour());
             workDay.setHours(hours);
             workDays.add(workDay);
         }

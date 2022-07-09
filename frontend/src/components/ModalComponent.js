@@ -15,6 +15,8 @@ class ModalComponent extends Component {
                             <thead>
                                 <tr>
                                 <th>Fecha</th>
+                                <th>Entrada</th>
+                                <th>Salida</th>
                                 <th>Horas Trabajadas</th>
                                 </tr>
                             </thead>
@@ -22,6 +24,8 @@ class ModalComponent extends Component {
                                 {this.props.data.workDays.map((day) => (
                                     <tr key={day.scheduleId}>
                                         <td>{day.date}</td>
+                                        <td>{day.inHour}</td>
+                                        <td>{day.outHour}</td>
                                         <td>{day.hours}</td>
                                     </tr>
                                 ))}
