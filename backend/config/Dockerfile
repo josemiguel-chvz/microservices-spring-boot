@@ -1,4 +1,4 @@
-FROM adoptopenjdk:11-jre-hotspot
+FROM openjdk:17-oracle
 VOLUME /tmp
-COPY target/*.jar app.jar
+COPY target/config-0.0.1-SNAPSHOT.jar app.jar
 ENTRYPOINT ["java","-jar","/app.jar"]
