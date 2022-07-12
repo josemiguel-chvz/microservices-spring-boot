@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: schedule-service
+  cloud:
+    kubernetes:
+      enabled: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    initialization-mode: always
+    driverClassName: org.postgresql.Driver
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+server:
+  port: 8082
+  forward-headers-strategy: framework
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}

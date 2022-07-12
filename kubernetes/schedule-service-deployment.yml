@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: schedule-service
+  name: schedule-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: schedule-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: schedule-service
+    spec:
+      containers:
+      - image: josemiguelchvz/schedule-service
+        name: schedule-service
+        resources: {}
+        ports:
+          - containerPort: 8082
+        env:
+          - name: DB_URL
+            value: jdbc:postgresql://postgres:5432/schedule
+          - name: DB_USERNAME
+            value: postgres
+          - name: DB_PASSWORD
+            value: password
+status: {}

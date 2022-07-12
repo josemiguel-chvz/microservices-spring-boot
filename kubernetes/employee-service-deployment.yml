@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: employee-service
+  name: employee-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employee-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: employee-service
+    spec:
+      containers:
+      - image: josemiguelchvz/employee-service
+        name: employee-service
+        resources: {}
+        ports:
+          - containerPort: 8081
+        env:
+          - name: DB_URL
+            value: jdbc:mysql://mysql:3306/employee
+          - name: DB_USERNAME
+            value: root
+          - name: DB_PASSWORD
+            value: password
+status: {}

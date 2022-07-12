@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: schedule-service
+  name: schedule-service
+spec:
+  selector:
+    app: schedule-service
+  ports:
+    - name: 8082-8082
+      protocol: TCP
+      port: 8082
+      targetPort: 8082
+  type: ClusterIP
+status:
+  loadBalancer: {}
